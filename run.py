@@ -2,8 +2,8 @@ import os, sys
 from shutil import copyfile
 from PIL import Image
 
-packages_dir = os.path.expanduser("~\AppData\Local\Packages")
-dest_dir = os.path.expanduser("~\OneDrive\Pictures\Wallpapers")
+packages_dir = os.path.expanduser("~\\AppData\\Local\\Packages")
+dest_dir = os.path.expanduser("~\\OneDrive\\Pictures\\Wallpapers")
 extension = '.jpg'
 minimum_width = 1024
 
@@ -17,7 +17,7 @@ def test_image_width(full_file_name):
 
 for package_dir in os.listdir(packages_dir):
     if package_dir.startswith("Microsoft.Windows.ContentDeliveryManager"):
-        assets_path = os.path.join(packages_dir, package_dir, "LocalState\Assets")
+        assets_path = os.path.join(packages_dir, package_dir, "LocalState\\Assets")
         for file_name in os.listdir(assets_path):
             full_file_name = os.path.join(assets_path, file_name)
             if test_image_width(full_file_name):
