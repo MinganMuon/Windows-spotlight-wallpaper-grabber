@@ -7,6 +7,10 @@ dest_dir = os.path.expanduser("~\\OneDrive\\Pictures\\Wallpapers")
 extension = '.jpg'
 minimum_width = 1024
 
+if not os.path.exists(dest_dir):
+    sys.stdout.write("creating directory %s\n" % dest_dir)
+    os.makedirs(dest_dir)
+
 def test_image_width(full_file_name):
     try:
         im = Image.open(full_file_name)
